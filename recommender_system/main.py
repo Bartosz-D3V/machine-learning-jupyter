@@ -2,11 +2,11 @@ import numpy as np
 from matplotlib import pyplot as plt
 from scipy.optimize import fmin_tnc
 
-from recommender_system.array_to_vector import array_to_vector
-from recommender_system.cofi_cost_function import cofi_cost_function
-from recommender_system.load_mat import load_mat
-from recommender_system.normalize_ratings import normalize_ratings
-from recommender_system.visualize_matrix import visualize_matrix
+from array_to_vector import array_to_vector
+from cofi_cost_function import cofi_cost_function
+from load_mat import load_mat
+from normalize_ratings import normalize_ratings
+from visualize_matrix import visualize_matrix
 
 r, y = load_mat('./data/ex8_movies.mat', 'R', 'Y')
 theta, x, num_features, num_movies, num_users =\
@@ -61,5 +61,5 @@ calculated_theta = np.array(calculated_params[num_movies * num_features:, :]).re
 prediction = calculated_x @ calculated_theta.T
 my_predictions = np.asmatrix(prediction[:, 0]).T + y_mean
 top_my_predictions_indices = np.argpartition(my_predictions, -5, axis=0)[-5:]
-top_movies = movies[top_my_predictions_indices.T[0]][0][:,1]
+top_movies = movies[top_my_predictions_indices.T]
 print("")

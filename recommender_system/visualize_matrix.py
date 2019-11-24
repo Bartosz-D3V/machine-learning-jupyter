@@ -1,5 +1,5 @@
 def visualize_matrix(plt, y):
     plt.imshow(y)
     plt.colorbar()
-    plt.xlabel('Users')
-    plt.ylabel('Movies')
+    plt.xlabel('Users (indices)')
+    plt.ylabel('Movies (indices)')

@@ -1,6 +1,6 @@
 import numpy as np
 
-from recommender_system.array_to_vector import array_to_vector
+from array_to_vector import array_to_vector
 
 
 def cofi_cost_function(params, y, r, num_users, num_movies, num_features, lambda_param):
